@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.vetrazcenter.utils.DrawerContent xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryVariant"
+    app:layoutDescription="@xml/nav_drawer_scene"
+    tools:context=".MainActivity">
+
+    <include
+        layout="@layout/content_main" />
+
+</com.example.vetrazcenter.utils.DrawerContent>

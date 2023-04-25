@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "162354729966",
+    "project_id": "vetraz-f48ba",
+    "storage_bucket": "vetraz-f48ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162354729966:android:749ea5b6718b86174334ff",
+        "android_client_info": {
+          "package_name": "com.example.vetraz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162354729966-t2lf57q1dr4ni9i1344q0cdfakg7p9jt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkdw6iCm0eVzMun9WcoAe54cW98NNwVmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162354729966-t2lf57q1dr4ni9i1344q0cdfakg7p9jt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162354729966:android:b9b295a756b14c514334ff",
+        "android_client_info": {
+          "package_name": "com.example.vetrazcenter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162354729966-t2lf57q1dr4ni9i1344q0cdfakg7p9jt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkdw6iCm0eVzMun9WcoAe54cW98NNwVmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162354729966-t2lf57q1dr4ni9i1344q0cdfakg7p9jt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

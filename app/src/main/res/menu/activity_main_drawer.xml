@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/main_item"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/baseline_search_24"
+            android:title="@string/category" />
+        <item
+            android:id="@+id/nav_saved"
+            android:icon="@drawable/baseline_school_24"
+            android:title="@string/favorites" />
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@drawable/baseline_local_phone_24"
+            android:title="@string/contacts" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/baseline_info_24"
+            android:title="@string/about_us" />
+    </group>
+    <group
+        android:id="@+id/labels_item"
+        android:checkableBehavior="single">
+        <item android:title="@string/social_media">
+            <menu>
+                <item
+                    android:id="@+id/label_youtube"
+                    android:icon="@drawable/icons8_youtube"
+                    android:title="@string/youtube" />
+                <item
+                    android:id="@+id/label_instagram"
+                    android:icon="@drawable/icons8_instagram"
+                    android:title="@string/instagram" />
+            </menu>
+        </item>
+    </group>
+</menu>

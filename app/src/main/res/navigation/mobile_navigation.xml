@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_saved"
+        android:name="com.example.vetrazcenter.ui.saved.SavedCoursesFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/fragment_saved_courses" >
+        <action
+            android:id="@+id/action_nav_saved_to_courseFragment"
+            app:destination="@id/courseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.vetrazcenter.ui.categories.CategoriesFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_nav_home_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_coursesListFragment"
+            app:destination="@id/coursesListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contacts"
+        android:name="com.example.vetrazcenter.ui.contacts.ContactsFragment"
+        android:label="@string/contacts"
+        tools:layout="@layout/fragment_contacts" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.vetrazcenter.ui.about.AboutFragment"
+        android:label="@string/about_us"
+        tools:layout="@layout/fragment_about" />
+    <activity
+        android:id="@+id/label_youtube"
+        app:action="android.intent.action.VIEW"
+        app:data="@string/url_youtube"
+        tools:layout="@layout/app_bar_main" />
+    <activity
+        android:id="@+id/label_instagram"
+        app:action="android.intent.action.VIEW"
+        app:data="@string/url_instagram"
+        tools:layout="@layout/app_bar_main" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.vetrazcenter.ui.onboarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+        <argument
+            android:name="ShowAppBar"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/coursesListFragment"
+        android:name="com.example.vetrazcenter.ui.courses.CoursesListFragment"
+        android:label="fragment_courses_list"
+        tools:layout="@layout/fragment_courses_list" >
+        <action
+            android:id="@+id/action_coursesListFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="com.example.vetrazcenter.ui.courses.CourseFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_course" />
+
+</navigation>
