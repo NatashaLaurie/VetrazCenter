@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#80c9b9</color>
+    <color name="primary_variant">#80c9b9</color>
+    <color name="secondary">#ffae94</color>
+    <color name="nav_drawer">#004a34</color>
+    <color name="secondary_variant">#ff8e69</color>
+    <color name="background">#121212</color>
+    <color name="surface">#121212</color>
+    <color name="on_primary">#000000</color>
+    <color name="on_secondary">#000000</color>
+    <color name="on_background">#ffffff</color>
+    <color name="on_surface">#ffffff</color>
+
+    <color name="primary_dark">#002A1D</color>
+    <color name="primary_dark_variant">#0b9377</color>
+    <color name="toolbar_title">#ffffff</color>
+
+</resources>

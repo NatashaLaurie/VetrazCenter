@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -29,7 +26,7 @@ class CourseFragment : Fragment() {
 
         _binding = FragmentCourseBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val viewPager = binding.tabanimViewpager
+        val viewPager = binding.viewpager
         val tabLayout = binding.tabs
 
         val navController = findNavController()

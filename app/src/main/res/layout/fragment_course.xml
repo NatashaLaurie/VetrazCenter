@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,9 +13,9 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            app:titleTextColor="?attr/colorPrimary"
+            app:titleTextColor="@color/on_background"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/white"
+            android:background="@color/background"
             app:popupTheme="@style/Theme.VetrazCenter.PopupOverlay" />
 
         <com.google.android.material.tabs.TabLayout
@@ -26,13 +25,13 @@
             android:layout_gravity="top"
             app:popupTheme="@style/Theme.VetrazCenter.PopupOverlay"
             app:tabGravity="fill"
-            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorColor="@color/secondary"
             app:tabMaxWidth="0dp"
-            app:tabSelectedTextColor="?attr/colorSecondaryVariant" />
+            app:tabSelectedTextColor="@color/secondary" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/tabanim_viewpager"
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />

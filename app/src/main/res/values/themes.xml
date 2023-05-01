@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.VetrazCenter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -8,12 +8,11 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorSecondaryVariant">@color/secondary_variant</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:listDivider">?attr/colorOnPrimary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:listDivider">@color/on_secondary</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/primary_variant</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
-
         <item name="android:windowLightStatusBar">true</item>
 
 
@@ -25,7 +24,7 @@
     </style>
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">?attr/colorPrimary</item>
+        <item name="color">@color/primary</item>
     </style>
 
     <style name="Widget.NavigationView.RippleEffect" parent="">
@@ -35,6 +34,13 @@
     <style name="Theme.VetrazCenter.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.VetrazCenter.ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:background">@drawable/round_button</item>
     </style>
 
 
