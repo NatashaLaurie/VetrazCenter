@@ -1,8 +1,6 @@
 package com.example.vetrazcenter.di
 
 import android.content.Context
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.Module
 import dagger.Provides
@@ -18,7 +16,6 @@ private val Context.dataStore by preferencesDataStore("on_boarding_prefs")
 object DataStorePrefs {
 
     @Provides
-    fun provideOnBoardPreference(@ApplicationContext context: Context): DataStore<Preferences> {
-        return context.dataStore
-    }
+    fun provideOnBoardPreference(@ApplicationContext context: Context) = context.dataStore
+
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_saved"
-        android:name="com.example.vetrazcenter.ui.saved.SavedCoursesFragment"
+        android:name="com.example.vetrazcenter.presentation.saved.SavedCoursesFragment"
         android:label="@string/favorites"
         tools:layout="@layout/fragment_saved_courses" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.vetrazcenter.ui.categories.CategoriesFragment"
+        android:name="com.example.vetrazcenter.presentation.categories.CategoriesFragment"
         android:label="@string/category"
         tools:layout="@layout/fragment_category" >
         <action
@@ -30,12 +30,12 @@
 
     <fragment
         android:id="@+id/nav_contacts"
-        android:name="com.example.vetrazcenter.ui.contacts.ContactsFragment"
+        android:name="com.example.vetrazcenter.presentation.contacts.ContactsFragment"
         android:label="@string/contacts"
         tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/nav_about"
-        android:name="com.example.vetrazcenter.ui.about.AboutFragment"
+        android:name="com.example.vetrazcenter.presentation.about.AboutFragment"
         android:label="@string/about_us"
         tools:layout="@layout/fragment_about" />
     <activity
@@ -50,7 +50,7 @@
         tools:layout="@layout/app_bar_main" />
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.vetrazcenter.ui.onboarding.OnBoardingFragment"
+        android:name="com.example.vetrazcenter.presentation.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <argument
@@ -62,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/coursesListFragment"
-        android:name="com.example.vetrazcenter.ui.courses.CoursesListFragment"
+        android:name="com.example.vetrazcenter.presentation.courses.CoursesListFragment"
         android:label="fragment_courses_list"
         tools:layout="@layout/fragment_courses_list" >
         <action
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/courseFragment"
-        android:name="com.example.vetrazcenter.ui.courses.CourseFragment"
+        android:name="com.example.vetrazcenter.presentation.courses.CourseFragment"
         android:label="fragment_course"
         tools:layout="@layout/fragment_course" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.saved.SavedCoursesFragment">
+    tools:context=".presentation.saved.SavedCoursesFragment">
 
     <TextView
         android:id="@+id/text_home"

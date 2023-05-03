@@ -1,56 +1,89 @@
 package com.example.vetrazcenter.data.repository
 
 import android.util.Log
-import com.example.vetraz.data.model.student.StudentInfo
+import com.example.vetrazcenter.core.Constants.COURSES
+import com.example.vetrazcenter.core.Constants.RECRUITING_IS_OPEN
+import com.example.vetrazcenter.core.Constants.TAG
 import com.example.vetrazcenter.data.model.courses.Course
-import com.example.vetrazcenter.data.model.courses.CoursesDocument
 import com.example.vetrazcenter.domain.repository.CoursesRepository
-import com.example.vetrazcenter.utils.UiState
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
+import com.example.vetrazcenter.domain.model.Response.Success
+import com.example.vetrazcenter.domain.model.Response.Failure
+import com.example.vetrazcenter.domain.repository.CoursesResponse
+import com.google.firebase.firestore.*
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class CoursesRepositoryImpl(
-    private val database: FirebaseFirestore
+@Singleton
+class CoursesRepositoryImpl @Inject constructor(
+    database: FirebaseFirestore
 ) : CoursesRepository {
 
-    private val TAG = "getCourses"
-    override  fun getCoursesList(): Flow<UiState<List<Course>>> {
-        return callbackFlow {
-            val listenerRegistration =
-                database.collection("courses").document("courses")
-                    .addSnapshotListener { snapshot, e ->
-                        if (e != null) {
-                            Log.w(TAG, "Listen failed.", e)
-                            trySend(UiState.Failure("failed downloading data")).isSuccess
-                        }
-
-                        //Log.d(TAG, "Current data: ${snapshot.data}")
-                        val data = snapshot?.toObject(CoursesDocument::class.java)
-                        //result.invoke(UiState.Success(data?.courses!!))
-                        if (data != null) {
-                            trySend(UiState.Success(data.courses!!)).isSuccess
-                        }
+    private val collectionGroup = database.collectionGroup(COURSES)
+    override fun getOngoingCoursesList() = callbackFlow {
+        val listenerRegistration =
+            collectionGroup.whereEqualTo(RECRUITING_IS_OPEN, true)
+                .addSnapshotListener { snapshot, e ->
+                    val coursesResponse = if (snapshot != null) {
+                        val courses = snapshot.toObjects(Course::class.java)
+                        Log.d(TAG, "Current data: $courses")
+                        Success(courses)
+                    } else {
+                        Log.w(TAG, "Listen failed.", e)
+                        Failure(e)
                     }
-            awaitClose {
-                Log.d(TAG, "Cancelling posts listener")
-                listenerRegistration.remove()
-            }
+                    trySend(coursesResponse)
+                }
+        awaitClose {
+            listenerRegistration.remove()
         }
     }
 
-    override fun apply(studentInfo: StudentInfo, result: (UiState<String>) -> Unit) {
-        database.collection("courses").document("applications")
-            .set(studentInfo, SetOptions.merge())
-            .addOnSuccessListener {
-                result.invoke(UiState.Success("Ваша заявка принята"))
+
+    fun Query.snapshotFlow(): Flow<QuerySnapshot> = callbackFlow {
+        val listenerRegistration = addSnapshotListener { value, error ->
+            if (error != null) {
+                close()
+                return@addSnapshotListener
             }
-            .addOnFailureListener {
-                result.invoke(UiState.Failure("Отсутствует связь с сервером, попропуйте позже"))
-            }
+            if (value != null)
+                trySend(value)
+        }
+        awaitClose {
+            listenerRegistration.remove()
+        }
     }
+
+    fun <T> DocumentReference.addSnapshotListenerFlow(dataType: Class<T>): Flow<T?> = callbackFlow {
+        val listener = object : EventListener<DocumentSnapshot> {
+            override fun onEvent(snapshot: DocumentSnapshot?, exception: FirebaseFirestoreException?) {
+                if (exception != null) {
+                    // An error occurred
+                    cancel()
+                    return
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    // The document has data
+                    val data = snapshot.toObject(dataType)
+                    trySend(data)
+                } else {
+                    // The document does not exist or has no data
+                }
+            }
+        }
+
+        val registration = addSnapshotListener(listener)
+        awaitClose { registration.remove() }
+    }
+
+    override fun getCoursesList(): Flow<CoursesResponse> {
+        TODO("Not yet implemented")
+    }
+
 
 }
 

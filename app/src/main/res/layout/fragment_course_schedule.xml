@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.courses.CourseScheduleFragment">
+    tools:context=".presentation.courses.CourseScheduleFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
