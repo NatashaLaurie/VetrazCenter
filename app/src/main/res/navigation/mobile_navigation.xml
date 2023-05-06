@@ -62,16 +62,24 @@
     </fragment>
     <fragment
         android:id="@+id/coursesListFragment"
-        android:name="com.example.vetrazcenter.presentation.courses.CoursesListFragment"
-        android:label="fragment_courses_list"
+        android:name="com.example.vetrazcenter.presentation.courses.courses_list.CoursesListFragment"
+        android:label="{categoryName}"
         tools:layout="@layout/fragment_courses_list" >
         <action
             android:id="@+id/action_coursesListFragment_to_courseFragment"
             app:destination="@id/courseFragment" />
+        <argument
+            android:name="categoryId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/courseFragment"
-        android:name="com.example.vetrazcenter.presentation.courses.CourseFragment"
+        android:name="com.example.vetrazcenter.presentation.courses.course.CourseFragment"
         android:label="fragment_course"
         tools:layout="@layout/fragment_course" />
 

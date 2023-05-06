@@ -1,6 +1,6 @@
 package com.example.vetrazcenter.domain.use_case
 
-data class UseCases(
+data class CoursesUseCases(
     val getOngoingCourses: GetOngoingCourses,
-    val addApplication: AddApplication
+    val getCoursesByCategory: GetCoursesByCategory
 )

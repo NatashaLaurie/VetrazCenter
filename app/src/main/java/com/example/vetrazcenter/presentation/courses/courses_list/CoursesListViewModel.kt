@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.presentation.categories
+package com.example.vetrazcenter.presentation.courses.courses_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CategoryViewModel @Inject constructor(
+class CoursesListViewModel @Inject constructor(
     private val useCases: CoursesUseCases
 ) : ViewModel() {
 
@@ -20,11 +20,14 @@ class CategoryViewModel @Inject constructor(
     private val _coursesResponse = MutableStateFlow<CoursesResponse>(Response.Loading)
     val coursesResponse = _coursesResponse.asStateFlow()
 
-    init {
-        getOngoingCourses()
+
+    fun getCoursesByCategory(category: String) = viewModelScope.launch {
+        useCases.getCoursesByCategory(category).collect { response ->
+            _coursesResponse.value = response
+        }
     }
 
-    private fun getOngoingCourses() = viewModelScope.launch {
+    fun getOngoingCourses() = viewModelScope.launch {
         useCases.getOngoingCourses().collect { response ->
             _coursesResponse.value = response
         }

@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.presentation.categories
+package com.example.vetrazcenter.presentation.courses.courses_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.vetrazcenter.R
 import com.example.vetrazcenter.data.model.courses.Course
-import com.example.vetrazcenter.databinding.OngoingCourseItemBinding
+import com.example.vetrazcenter.databinding.CourseItemBinding
 
-class OngoingCoursesAdapter :
-    RecyclerView.Adapter<OngoingCoursesAdapter.OngoingCoursesViewHolder>() {
+class CoursesAdapter :
+    RecyclerView.Adapter<CoursesAdapter.CourseViewHolder>() {
 
-    inner class OngoingCoursesViewHolder(val binding: OngoingCourseItemBinding) :
+    inner class CourseViewHolder(val binding: CourseItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(course: Course) {
             binding.root.setOnClickListener {
@@ -27,7 +27,7 @@ class OngoingCoursesAdapter :
     private val differCallback = object : DiffUtil.ItemCallback<Course>() {
 
         override fun areItemsTheSame(oldItem: Course, newItem: Course): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.courseName == newItem.courseName
         }
 
         override fun areContentsTheSame(oldItem: Course, newItem: Course): Boolean {
@@ -37,9 +37,9 @@ class OngoingCoursesAdapter :
 
     val differ = AsyncListDiffer(this, differCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OngoingCoursesViewHolder {
-        return OngoingCoursesViewHolder(
-            OngoingCourseItemBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
+        return CourseViewHolder(
+            CourseItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -51,7 +51,7 @@ class OngoingCoursesAdapter :
         return differ.currentList.size
     }
 
-    override fun onBindViewHolder(holder: OngoingCoursesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         val course = differ.currentList[position]
         holder.binding.apply {
             Glide.with(this.root).load(course.imageUrl).into(ivCourseImage)
@@ -61,6 +61,7 @@ class OngoingCoursesAdapter :
                 course.studentsAge?.from.toString(),
                 course.studentsAge?.to.toString()
             )
+            tvPaymentTerm.text = course.paymentTerm
         }
         holder.bind(course)
     }

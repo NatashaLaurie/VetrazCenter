@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.presentation.courses
+package com.example.vetrazcenter.presentation.courses.course
 
 import android.os.Bundle
 import android.view.LayoutInflater

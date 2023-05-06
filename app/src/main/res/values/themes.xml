@@ -15,7 +15,16 @@
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:windowLightStatusBar">true</item>
 
+    </style>
 
+    <style name="RoundedSquare">
+        <item name="cornerSize">12%</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="">
+        <item name="android:textColorHint">@color/on_background</item>
+        <item name="android:textColorPrimary">@color/on_background</item>
+        <item name="android:textColorSecondary">@color/on_background</item>
     </style>
 
     <style name="Widget.NavigationView" parent="@style/Widget.MaterialComponents.NavigationView">

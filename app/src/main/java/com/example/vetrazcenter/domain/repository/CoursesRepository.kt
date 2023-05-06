@@ -10,7 +10,7 @@ typealias CoursesResponse = Response<Courses>
 
 
 interface CoursesRepository {
- fun getCoursesList(): Flow<CoursesResponse>
+ fun getCoursesListByCategory(category: String): Flow<CoursesResponse>
 
  fun getOngoingCoursesList(): Flow<CoursesResponse>
 

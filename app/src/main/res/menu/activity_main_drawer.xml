@@ -8,7 +8,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/baseline_search_24"
+            android:icon="@drawable/baseline_manage_search_24"
             android:title="@string/category" />
         <item
             android:id="@+id/nav_saved"
