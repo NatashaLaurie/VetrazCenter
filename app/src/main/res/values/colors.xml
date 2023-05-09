@@ -18,6 +18,8 @@
     <color name="on_background">#000000</color>
     <color name="on_surface">#000000</color>
 
+    <color name="colorSemiTransparent">#C6ffffff</color>
+
     <color name="gradient_end">#FFCEBE</color>
     <color name="gradient_start">#D84B1C</color>
     <color name="splash_background">#E0F2EE</color>
@@ -25,5 +27,8 @@
     <color name="primary_dark">#004a34</color>
     <color name="primary_dark_variant">#0b9377</color>
     <color name="toolbar_title">#00664F</color>
+
+    <color name="accent_text">#D84B1C</color>
+    <color name="accent_text_variant">#0b9377</color>
 
 </resources>

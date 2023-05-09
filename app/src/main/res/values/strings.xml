@@ -49,6 +49,7 @@
     <string name="categories">Все категории</string>
 
     <string name="age">%1$s - %2$s лет</string>
+    <string name="room_number">Каб. %1$s</string>
     <string name="decorative_creativity">Декоративное творчество</string>
     <string name="choreographic_creativity">Хореографическое творчество</string>
     <string name="sport_direction">Спортивное направление</string>
@@ -62,6 +63,27 @@
     <string name="classes_for_preschoolers">Занятия для дошкольников</string>
     <string name="technical_creativity">Техничесническое творчество</string>
     <string name="filter">filter</string>
+    <string name="extended_fab_content_desc">apply button</string>
+    <string name="apply">записаться</string>
+    <string name="add_to_fav_fab">добавить в избранное</string>
+    <string name="course_program">Программа курса</string>
+    <string name="course_department">Программа курса</string>
+    <string name="student_age">Возраст обучающихся:</string>
+    <string name="program_duration">Срок реализации программы:</string>
+    <string name="tv_teacher">Преподаватель</string>
+    <string name="tv_contact_phone">Контактный телефон:</string>
+    <string name="course_description">Описание курса</string>
+    <string name="phone">телефон:</string>
+    <string name="day">День</string>
+    <string name="monday">ПН</string>
+    <string name="tuesday">ВТ</string>
+    <string name="wednesday">СР</string>
+    <string name="thursday">ЧТ</string>
+    <string name="friday">ПТ</string>
+    <string name="saturday">СБ</string>
+    <string name="sunday">ВС</string>
+    <string name="coming_soon">РАСПИСАНИЕ В РАЗРАБОТКЕ</string>
+    <string name="back_button">back button</string>
 
     <string-array name="courses_tabs">
         <item>О курсе</item>

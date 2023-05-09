@@ -2,6 +2,7 @@ package com.example.vetrazcenter.presentation.courses.courses_list
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.core.view.isVisible
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,14 +49,68 @@ class CoursesListFragment : Fragment() {
             coursesViewModel.getOngoingCourses()
         }
 
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onPrepareMenu(menu: Menu) {
+
+            }
+
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.search_menu, menu)
+                val search = menu.findItem(R.id.action_search)
+                val searchView = search.actionView as SearchView
+                searchView.isSubmitButtonEnabled = true
+                searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        if (query != null) {
+                            TODO()
+                        }
+                        return true
+                    }
+
+                    override fun onQueryTextChange(query: String?): Boolean {
+                        if (query != null) {
+                            TODO()
+
+                        }
+                        return true
+                    }
+                })
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.action_search -> {
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            override fun onMenuClosed(menu: Menu) {
+
+            }
+
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupMenu()
         setupCoursesRecyclerView()
         observeCoursesList()
+
+        courseAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putParcelable("course", it)
+                putString("courseName", it.courseName)
+            }
+            findNavController().navigate(
+                R.id.action_coursesListFragment_to_courseFragment,
+                bundle
+            )
+        }
     }
 
     private fun observeCoursesList() {
@@ -83,37 +139,14 @@ class CoursesListFragment : Fragment() {
         }
     }
 
-    private fun setupMenu() {
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onPrepareMenu(menu: Menu) {
-
-            }
-
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                // Надуваем fragment_menu и мержим с прошлым menu
-                menuInflater.inflate(R.menu.search_menu, menu)
-            }
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                // Пользователь кликнул на элемент меню
-                // return true — не нужно передавать нажатие другому провайдеру
-                // return false — передаем нажатие следующему провайдеру
-                return false
-            }
-
-            override fun onMenuClosed(menu: Menu) {
-
-            }
-
-        }, viewLifecycleOwner)
-    }
 
     private fun setupCoursesRecyclerView() {
         courseAdapter = CoursesAdapter()
         binding.rvCourses.apply {
             adapter = courseAdapter
-            layoutManager = LinearLayoutManager(activity)
+            layoutManager = LinearLayoutManager(requireContext())
             addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
+            setHasFixedSize(true)
 
         }
     }

@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.vetrazcenter.R
 import com.example.vetrazcenter.databinding.FragmentCourseBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -17,6 +17,7 @@ class CourseFragment : Fragment() {
     private var _binding: FragmentCourseBinding? = null
 
     private val binding get() = _binding!!
+    private val args: CourseFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,25 +26,34 @@ class CourseFragment : Fragment() {
     ): View {
 
         _binding = FragmentCourseBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        val viewPager = binding.viewpager
-        val tabLayout = binding.tabs
 
-        val navController = findNavController()
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val tabNames = resources.getStringArray(R.array.courses_tabs)
+        binding.viewpager.adapter =
+            ViewPagerAdapter(childFragmentManager, viewLifecycleOwner.lifecycle, args.course)
 
-        val adapter = ViewPagerAdapter(this)
-        viewPager.adapter = adapter
+        binding.viewpager.setPageTransformer(ZoomOutPageTransformer())
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+        TabLayoutMediator(binding.tabs, binding.viewpager) { tab, position ->
             tab.text = tabNames[position]
         }.attach()
 
+        val course = args.course
 
-        return root
+        Glide.with(this).load(course.imageUrl).into(binding.toolbarImage)
+        binding.title.text = course.courseName
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

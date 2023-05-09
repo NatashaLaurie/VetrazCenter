@@ -3,7 +3,7 @@
     <color name="primary">#80c9b9</color>
     <color name="primary_variant">#80c9b9</color>
     <color name="secondary">#ffae94</color>
-    <color name="nav_drawer">#004a34</color>
+    <color name="nav_drawer">#002A1D</color>
     <color name="secondary_variant">#ff8e69</color>
     <color name="background">#121212</color>
     <color name="surface">#505050</color>
@@ -15,5 +15,11 @@
     <color name="primary_dark">#002A1D</color>
     <color name="primary_dark_variant">#0b9377</color>
     <color name="toolbar_title">#ffffff</color>
+
+    <color name="colorSemiTransparent">#C6000000</color>
+    <color name="accent_text">#ff8e69</color>
+    <color name="accent_text_variant">#80c9b9</color>
+
+
 
 </resources>

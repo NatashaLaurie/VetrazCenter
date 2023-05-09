@@ -1,14 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.courses.course.CourseScheduleFragment">
+    android:fillViewport="true"
+    android:scrollbars="none">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="8dp"
+        android:paddingBottom="?attr/actionBarSize"
+        tools:context=".presentation.courses.course.CourseDescriptionFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/title"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/accent_text"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContacts"
+            tools:text="@string/room_number" />
+
+        <TextView
+            android:id="@+id/tvContacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/phone"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+        <TextView
+            android:id="@+id/tvContactPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/accent_text_variant"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/tvContacts"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"
+            tools:text="+375175555" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="500dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/days_layout"
+            app:layout_constraintTop_toTopOf="@id/days_layout" />
+
+        <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/day"
+            app:layout_constraintEnd_toEndOf="@id/days_layout"
+            app:layout_constraintTop_toBottomOf="@id/tvRoom" />
+
+        <TextView
+            android:id="@+id/tvComingSoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/coming_soon"
+            android:textSize="48sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRoom" />
+
+        <LinearLayout
+            android:id="@+id/days_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDay">
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/button_color"
+                android:gravity="center"
+                android:text="@string/monday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:gravity="center"
+                android:text="@string/tuesday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/button_color"
+                android:gravity="center"
+                android:text="@string/wednesday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:gravity="center"
+                android:text="@string/thursday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/button_color"
+                android:gravity="center"
+                android:text="@string/friday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="@string/saturday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/button_color"
+                android:gravity="center"
+                android:text="@string/sunday"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:paddingEnd="120dp"
+            app:layout_constraintStart_toEndOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@id/tvRoom"
+            tools:listitem="@layout/schedule_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

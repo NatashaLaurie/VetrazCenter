@@ -23,4 +23,6 @@ object Constants {
     const val COURSES = "courses"
     const val NAME = "name"
 
+    const val COURSE_KEY = "course"
+
 }

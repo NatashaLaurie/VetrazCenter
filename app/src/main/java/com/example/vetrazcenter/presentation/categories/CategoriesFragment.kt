@@ -6,19 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vetrazcenter.R
 import com.example.vetrazcenter.databinding.FragmentCategoryBinding
 import com.example.vetrazcenter.domain.model.Response
-import com.example.vetrazcenter.presentation.onboarding.OnBoardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -26,24 +23,12 @@ import kotlinx.coroutines.launch
 class CategoriesFragment : Fragment() {
 
     private var _binding: FragmentCategoryBinding? = null
-    private val onBoardingViewModel: OnBoardingViewModel by activityViewModels()
 
     private val categoryViewModel: CategoryViewModel by viewModels()
     private lateinit var courseAdapter: OngoingCoursesAdapter
     private lateinit var categoriesAdapter: CategoriesAdapter
 
-
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        onBoardingViewModel.fetchOnBoarding().observe(requireActivity()) {
-            if (it == false) {
-                view?.findNavController()
-                    ?.navigate(R.id.action_nav_home_to_onBoardingFragment)
-            }
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,6 +54,17 @@ class CategoriesFragment : Fragment() {
             }
             findNavController().navigate(
                 R.id.action_nav_home_to_coursesListFragment,
+                bundle
+            )
+        }
+
+        courseAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putParcelable("course", it)
+                putString("courseName", it.courseName)
+            }
+            findNavController().navigate(
+                R.id.action_nav_home_to_courseFragment,
                 bundle
             )
         }
@@ -116,7 +112,8 @@ class CategoriesFragment : Fragment() {
         courseAdapter = OngoingCoursesAdapter()
         binding.rvOngoingCourses.apply {
             adapter = courseAdapter
-            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false )
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
     }
 
@@ -124,11 +121,12 @@ class CategoriesFragment : Fragment() {
         categoriesAdapter = CategoriesAdapter()
         binding.rvCategories.apply {
             isNestedScrollingEnabled = false
-            setHasFixedSize(false)
+            setHasFixedSize(true)
             adapter = categoriesAdapter
-            layoutManager = GridLayoutManager(activity, 2)
+            layoutManager = GridLayoutManager(requireContext(), 2)
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

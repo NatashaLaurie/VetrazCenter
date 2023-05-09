@@ -1,7 +1,10 @@
 package com.example.vetrazcenter.data.model.courses
 
+import android.os.Parcelable
 import com.google.firebase.firestore.PropertyName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Course(
     @get:PropertyName("id")
     @set:PropertyName("id")
@@ -58,4 +61,4 @@ data class Course(
     @get:PropertyName("recruiting_is_open")
     @set:PropertyName("recruiting_is_open")
     var recruitingIsOpen: Boolean? = null,
-)
+) : Parcelable

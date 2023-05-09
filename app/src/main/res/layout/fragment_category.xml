@@ -8,6 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".presentation.categories.CategoriesFragment">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,12 +39,13 @@
             android:id="@+id/tvOngoing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
             android:layout_marginTop="16dp"
             android:text="@string/tv_ongoing"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/on_surface"
             android:textSize="18sp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view"
@@ -78,6 +80,7 @@
             android:id="@+id/btnSeeAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
             android:layout_gravity="end"
             android:background="@android:color/transparent"
             android:text="@string/see_all"
@@ -92,10 +95,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/categories"
+            android:fontFamily="sans-serif-light"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/on_surface"
             android:textSize="18sp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategories"

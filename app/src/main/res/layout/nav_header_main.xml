@@ -18,6 +18,7 @@
         android:text="@string/nav_drawer_header_title"
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-light"
         android:layout_marginEnd="16dp"
         android:textColor="@color/on_background"
         android:textSize="28sp"
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-light"
         android:layout_marginEnd="16dp"
         android:text="@string/nav_drawer_header_description"
         android:textColor="@color/on_background"
@@ -36,6 +38,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:background="@color/on_background" />
 </LinearLayout>

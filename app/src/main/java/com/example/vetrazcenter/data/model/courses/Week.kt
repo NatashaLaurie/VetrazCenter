@@ -1,7 +1,10 @@
 package com.example.vetrazcenter.data.model.courses
 
+import android.os.Parcelable
 import com.google.firebase.firestore.PropertyName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Week(
     @get:PropertyName("monday_lessons")
     @set:PropertyName("monday_lessons")
@@ -30,4 +33,4 @@ data class Week(
     @get:PropertyName("sunday_lessons")
     @set:PropertyName("sunday_lessons")
     var sundayLessons: List<String>? = null,
-)
+) : Parcelable

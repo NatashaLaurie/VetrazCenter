@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_nav_home_to_coursesListFragment"
             app:destination="@id/coursesListFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_courseFragment"
+            app:destination="@id/courseFragment" />
     </fragment>
 
     <fragment
@@ -80,7 +83,14 @@
     <fragment
         android:id="@+id/courseFragment"
         android:name="com.example.vetrazcenter.presentation.courses.course.CourseFragment"
-        android:label="fragment_course"
-        tools:layout="@layout/fragment_course" />
+        android:label="{courseName}"
+        tools:layout="@layout/fragment_course" >
+        <argument
+            android:name="course"
+            app:argType="com.example.vetrazcenter.data.model.courses.Course" />
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
