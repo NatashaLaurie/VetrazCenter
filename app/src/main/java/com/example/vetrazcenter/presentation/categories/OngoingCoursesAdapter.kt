@@ -2,13 +2,14 @@ package com.example.vetrazcenter.presentation.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.data.model.courses.Course
 import com.example.vetrazcenter.databinding.OngoingCourseItemBinding
+import com.example.vetrazcenter.data.model.local.courses.Course
 
 class OngoingCoursesAdapter :
     RecyclerView.Adapter<OngoingCoursesAdapter.OngoingCoursesViewHolder>() {
@@ -62,6 +63,7 @@ class OngoingCoursesAdapter :
                 course.studentsAge?.to.toString()
             )
         }
+        holder.binding.card.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.holder_animation)
         holder.bind(course)
     }
 

@@ -103,7 +103,7 @@ class CoursesListFragment : Fragment() {
 
         courseAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
-                putParcelable("course", it)
+                putSerializable("course", it)
                 putString("courseName", it.courseName)
             }
             findNavController().navigate(

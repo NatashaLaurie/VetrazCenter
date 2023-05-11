@@ -4,15 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
-import android. view.View
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.core.Constants
-import com.example.vetrazcenter.core.Utils.parcelable
-import com.example.vetrazcenter.data.model.courses.Course
+import com.example.vetrazcenter.utils.Constants
+import com.example.vetrazcenter.utils.Utils.serializable
 import com.example.vetrazcenter.databinding.FragmentCourseScheduleBinding
+import com.example.vetrazcenter.data.model.local.courses.Course
 
 
 class CourseScheduleFragment : Fragment() {
@@ -36,7 +36,7 @@ class CourseScheduleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val course = arguments?.parcelable<Course>(Constants.COURSE_KEY)
+        val course = arguments?.serializable<Course>(Constants.COURSE_KEY)
 
         binding.apply {
             val locationInfo = course?.locationInfo
@@ -49,7 +49,8 @@ class CourseScheduleFragment : Fragment() {
 
         scheduleAdapter = ScheduleAdapter()
         binding.rvSchedule.apply {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false )
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = scheduleAdapter
         }
 

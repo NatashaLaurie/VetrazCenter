@@ -84,6 +84,9 @@
     <string name="sunday">ВС</string>
     <string name="coming_soon">РАСПИСАНИЕ В РАЗРАБОТКЕ</string>
     <string name="back_button">back button</string>
+    <string name="course_saved">Курс добавлен в избранное</string>
+    <string name="course_deleted">Курс удалён</string>
+    <string name="undo">вернуть</string>
 
     <string-array name="courses_tabs">
         <item>О курсе</item>

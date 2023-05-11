@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.core.Constants.COURSE_KEY
-import com.example.vetrazcenter.core.Utils.parcelable
-import com.example.vetrazcenter.data.model.courses.Course
+import com.example.vetrazcenter.utils.Constants.COURSE_KEY
+import com.example.vetrazcenter.utils.Utils.serializable
 import com.example.vetrazcenter.databinding.FragmentCourseDescriptionBinding
+import com.example.vetrazcenter.data.model.local.courses.Course
 
 
 class CourseDescriptionFragment : Fragment() {
@@ -28,7 +28,7 @@ class CourseDescriptionFragment : Fragment() {
 
         _binding = FragmentCourseDescriptionBinding.inflate(inflater, container, false)
 
-        val course = arguments?.parcelable<Course>(COURSE_KEY)
+        val course = arguments?.serializable<Course>(COURSE_KEY)
 
         binding.apply {
             if (course != null) {

@@ -2,20 +2,21 @@ package com.example.vetrazcenter.presentation.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.core.Constants.ART_CREATIVITY
-import com.example.vetrazcenter.core.Constants.CHOREOGRAPHIC_CREATIVITY
-import com.example.vetrazcenter.core.Constants.CLASSES_FOR_PRESCHOOLERS
-import com.example.vetrazcenter.core.Constants.DECORATION_CREATIVITY
-import com.example.vetrazcenter.core.Constants.ECOLOGY_AND_COUNTRIES
-import com.example.vetrazcenter.core.Constants.FOREIGN_LANGUAGES
-import com.example.vetrazcenter.core.Constants.INTELLECTUAL_CREATIVITY
-import com.example.vetrazcenter.core.Constants.IT_TECHNOLOGY
-import com.example.vetrazcenter.core.Constants.MUSIC_CREATIVITY
-import com.example.vetrazcenter.core.Constants.SINGING_DIRECTION
-import com.example.vetrazcenter.core.Constants.SPORT_DIRECTION
-import com.example.vetrazcenter.core.Constants.TECHNICAL_CREATIVITY
+import com.example.vetrazcenter.utils.Constants.ART_CREATIVITY
+import com.example.vetrazcenter.utils.Constants.CHOREOGRAPHIC_CREATIVITY
+import com.example.vetrazcenter.utils.Constants.CLASSES_FOR_PRESCHOOLERS
+import com.example.vetrazcenter.utils.Constants.DECORATION_CREATIVITY
+import com.example.vetrazcenter.utils.Constants.ECOLOGY_AND_COUNTRIES
+import com.example.vetrazcenter.utils.Constants.FOREIGN_LANGUAGES
+import com.example.vetrazcenter.utils.Constants.INTELLECTUAL_CREATIVITY
+import com.example.vetrazcenter.utils.Constants.IT_TECHNOLOGY
+import com.example.vetrazcenter.utils.Constants.MUSIC_CREATIVITY
+import com.example.vetrazcenter.utils.Constants.SINGING_DIRECTION
+import com.example.vetrazcenter.utils.Constants.SPORT_DIRECTION
+import com.example.vetrazcenter.utils.Constants.TECHNICAL_CREATIVITY
 import com.example.vetrazcenter.databinding.CategoryItemBinding
 
 class CategoriesAdapter() :
@@ -77,6 +78,8 @@ class CategoriesAdapter() :
             ivCategory.setImageResource(category.imageId)
             tvCategory.setText(category.categoryNameId)
         }
+        holder.binding.card.animation =
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.holder_animation)
         holder.bind(category)
     }
 

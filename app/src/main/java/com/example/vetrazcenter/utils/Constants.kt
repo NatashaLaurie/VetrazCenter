@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.core
+package com.example.vetrazcenter.utils
 
 object Constants {
     //App
@@ -24,5 +24,7 @@ object Constants {
     const val NAME = "name"
 
     const val COURSE_KEY = "course"
+
+    const val DATABASE_NAME = "courses_database"
 
 }

@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.vetrazcenter.core.Constants.COURSE_KEY
-import com.example.vetrazcenter.data.model.courses.Course
+import com.example.vetrazcenter.utils.Constants.COURSE_KEY
+import com.example.vetrazcenter.data.model.local.courses.Course
 
 
 private const val NUM_TABS = 2
@@ -26,7 +26,7 @@ class ViewPagerAdapter(
     override fun createFragment(position: Int): Fragment {
         when (position) {
             0 -> {
-                bundle.putParcelable(COURSE_KEY, course)
+                bundle.putSerializable(COURSE_KEY, course)
                 courseDescriptionFragment.arguments = bundle
 
                 return courseDescriptionFragment

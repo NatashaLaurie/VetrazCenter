@@ -2,13 +2,14 @@ package com.example.vetrazcenter.presentation.courses.courses_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.data.model.courses.Course
 import com.example.vetrazcenter.databinding.CourseItemBinding
+import com.example.vetrazcenter.data.model.local.courses.Course
 
 class CoursesAdapter :
     RecyclerView.Adapter<CoursesAdapter.CourseViewHolder>() {
@@ -63,6 +64,8 @@ class CoursesAdapter :
             )
             tvPaymentTerm.text = course.paymentTerm
         }
+        holder.binding.card.animation =
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.holder_animation)
         holder.bind(course)
     }
 

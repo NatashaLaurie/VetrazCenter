@@ -5,9 +5,9 @@ import com.example.vetrazcenter.data.repository.CoursesRepositoryImpl
 import com.example.vetrazcenter.domain.repository.ApplicationRepository
 import com.example.vetrazcenter.domain.repository.CoursesRepository
 import com.example.vetrazcenter.domain.use_case.AddApplication
-import com.example.vetrazcenter.domain.use_case.GetOngoingCourses
 import com.example.vetrazcenter.domain.use_case.CoursesUseCases
 import com.example.vetrazcenter.domain.use_case.GetCoursesByCategory
+import com.example.vetrazcenter.domain.use_case.GetOngoingCourses
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
@@ -31,6 +31,7 @@ object RepositoryModule {
     fun providesApplicationRepository(database: FirebaseFirestore): ApplicationRepository {
         return ApplicationRepositoryImpl(database)
     }
+
 
     @Provides
     fun provideCoursesUseCases(

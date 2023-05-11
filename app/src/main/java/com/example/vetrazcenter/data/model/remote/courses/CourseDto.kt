@@ -1,18 +1,17 @@
-package com.example.vetrazcenter.data.model.courses
+package com.example.vetrazcenter.data.model.remote.courses
 
-import android.os.Parcelable
+import com.example.vetrazcenter.data.model.local.courses.Course
+import com.example.vetrazcenter.data.model.local.courses.Schedule
 import com.google.firebase.firestore.PropertyName
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
-data class Course(
+data class CourseDto(
     @get:PropertyName("id")
     @set:PropertyName("id")
-    var id: String? = null,
+    var id: String = "id",
 
     @get:PropertyName("location_info")
     @set:PropertyName("location_info")
-    var locationInfo: LocationInfo? = null,
+    var locationInfoDto: LocationInfoDto? = null,
 
     @get:PropertyName("department")
     @set:PropertyName("department")
@@ -44,11 +43,11 @@ data class Course(
 
     @get:PropertyName("students_age")
     @set:PropertyName("students_age")
-    var studentsAge: StudentsAge? = null,
+    var studentsAgeDto: StudentsAgeDto? = null,
 
     @get:PropertyName("groups_schedule")
     @set:PropertyName("groups_schedule")
-    var schedule: List<Schedule>? = null,
+    var scheduleDto: List<ScheduleDto>? = null,
 
     @get:PropertyName("program")
     @set:PropertyName("program")
@@ -61,4 +60,26 @@ data class Course(
     @get:PropertyName("recruiting_is_open")
     @set:PropertyName("recruiting_is_open")
     var recruitingIsOpen: Boolean? = null,
-) : Parcelable
+) {
+    fun toDomainObject() =
+        Course(
+            id = id,
+            locationInfo = locationInfoDto?.toDomainObject(),
+            department = department,
+            contactPhone = contactPhone,
+            courseName = courseName,
+            description = description,
+            imageUrl = imageUrl,
+            paymentTerm = paymentTerm,
+            teacherName = teacherName,
+            studentsAge = studentsAgeDto?.toDomainObject(),
+            schedule = scheduleToScheduleDto(scheduleDto),
+            program = program,
+            programDuration = programDuration,
+            recruitingIsOpen = recruitingIsOpen,
+        )
+
+    private fun scheduleToScheduleDto(scheduleDto: List<ScheduleDto>?): List<Schedule>? {
+        return scheduleDto?.map { it.toDomainObject() }
+    }
+}

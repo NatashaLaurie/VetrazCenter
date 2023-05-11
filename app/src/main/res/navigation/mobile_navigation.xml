@@ -21,9 +21,6 @@
         android:label="@string/category"
         tools:layout="@layout/fragment_category" >
         <action
-            android:id="@+id/action_nav_home_to_onBoardingFragment"
-            app:destination="@id/onBoardingFragment" />
-        <action
             android:id="@+id/action_nav_home_to_coursesListFragment"
             app:destination="@id/coursesListFragment" />
         <action
@@ -52,18 +49,6 @@
         app:data="@string/url_instagram"
         tools:layout="@layout/app_bar_main" />
     <fragment
-        android:id="@+id/onBoardingFragment"
-        android:name="com.example.vetrazcenter.presentation.onboarding.OnBoardingFragment"
-        android:label="fragment_on_boarding"
-        tools:layout="@layout/fragment_on_boarding" >
-        <argument
-            android:name="ShowAppBar"
-            android:defaultValue="true" />
-        <action
-            android:id="@+id/action_onBoardingFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
-    <fragment
         android:id="@+id/coursesListFragment"
         android:name="com.example.vetrazcenter.presentation.courses.courses_list.CoursesListFragment"
         android:label="{categoryName}"
@@ -86,11 +71,11 @@
         android:label="{courseName}"
         tools:layout="@layout/fragment_course" >
         <argument
-            android:name="course"
-            app:argType="com.example.vetrazcenter.data.model.courses.Course" />
-        <argument
             android:name="courseName"
             app:argType="string" />
+        <argument
+            android:name="course"
+            app:argType="com.example.vetrazcenter.data.model.local.courses.Course" />
     </fragment>
 
 </navigation>

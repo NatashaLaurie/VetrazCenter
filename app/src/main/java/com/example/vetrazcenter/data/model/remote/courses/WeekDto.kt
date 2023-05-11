@@ -1,11 +1,9 @@
-package com.example.vetrazcenter.data.model.courses
+package com.example.vetrazcenter.data.model.remote.courses
 
-import android.os.Parcelable
+import com.example.vetrazcenter.data.model.local.courses.Week
 import com.google.firebase.firestore.PropertyName
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
-data class Week(
+data class WeekDto(
     @get:PropertyName("monday_lessons")
     @set:PropertyName("monday_lessons")
     var mondayLessons: List<String>? = null,
@@ -33,4 +31,15 @@ data class Week(
     @get:PropertyName("sunday_lessons")
     @set:PropertyName("sunday_lessons")
     var sundayLessons: List<String>? = null,
-) : Parcelable
+) {
+    fun toDomainObject() =
+        Week(
+            mondayLessons = mondayLessons,
+            tuesdayLessons = tuesdayLessons,
+            wednesdayLessons = wednesdayLessons,
+            thursdayLessons = thursdayLessons,
+            fridayLessons = fridayLessons,
+            saturdayLessons = saturdayLessons,
+            sundayLessons = sundayLessons,
+        )
+}
