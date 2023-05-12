@@ -9,7 +9,7 @@
     <string name="instagram">Instagram</string>
     <string name="youtube">Youtube</string>
     <string name="url_youtube">https://www.youtube.com/channel/UCELloWoD76hMPixNeF_YiCw/featured</string>
-    <string name="url_instagram">https://developer.android.com/guide/navigation/navigation-ui</string>
+    <string name="url_instagram">https://www.instagram.com/vetraz_official</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -87,6 +87,18 @@
     <string name="course_saved">Курс добавлен в избранное</string>
     <string name="course_deleted">Курс удалён</string>
     <string name="undo">вернуть</string>
+    <string name="birthday_date">Дата рождения ребенка</string>
+    <string name="school">Учреждение образования</string>
+    <string name="email">Email</string>
+    <string name="surname">Фамилия ребенка</string>
+    <string name="all_fields_must_be_fill">Все поля должны быть заполнены!</string>
+    <string name="application_accepted">Ваша завка принята!</string>
+    <string name="application_failed">Не удалось записаться на курс</string>
+    <string name="name">Имя ребенка</string>
+    <string name="cancel">отменить</string>
+    <string name="address">Домашний адрес</string>
+    <string name="recruiting_closed">набор закрыт</string>
+    <string name="nav_categories">Категории</string>
 
     <string-array name="courses_tabs">
         <item>О курсе</item>

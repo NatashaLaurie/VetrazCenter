@@ -28,9 +28,9 @@ class CoursesRepositoryImpl @Inject constructor(
             .document(category).collection(COURSES).orderBy(NAME)
             .addSnapshotListener { snapshot, e ->
                 val coursesResponse = if (snapshot != null) {
-                    val cours = snapshot.toObjects(CourseDto::class.java)
-                    Log.d(TAG, "Current data: $cours")
-                    Success(cours.map { it.toDomainObject() })
+                    val course = snapshot.toObjects(CourseDto::class.java)
+                    Log.d(TAG, "Current data: $course")
+                    Success(course.map { it.toDomainObject() })
                 } else {
                     Log.w(TAG, "Listen failed.", e)
                     Failure(e)
@@ -47,9 +47,9 @@ class CoursesRepositoryImpl @Inject constructor(
             collectionGroup.whereEqualTo(RECRUITING_IS_OPEN, true).limit(5)
                 .addSnapshotListener { snapshot, e ->
                     val coursesResponse = if (snapshot != null) {
-                        val cours = snapshot.toObjects(CourseDto::class.java)
-                        Log.d(TAG, "Current data: $cours")
-                        Success(cours.map { it.toDomainObject() })
+                        val course = snapshot.toObjects(CourseDto::class.java)
+                        Log.d(TAG, "Current data: $course")
+                        Success(course.map { it.toDomainObject() })
                     } else {
                         Log.w(TAG, "Listen failed.", e)
                         Failure(e)

@@ -6,6 +6,7 @@ object Constants {
 
     //Firestore
     const val CATEGORIES = "categories"
+    const val APPLICATIONS = "applications"
     const val DECORATION_CREATIVITY = "decoration_creativity"
     const val CHOREOGRAPHIC_CREATIVITY = "choreographic_creativity"
     const val SPORT_DIRECTION = "sport_direction"

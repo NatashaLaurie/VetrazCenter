@@ -14,6 +14,7 @@
         <item name="android:statusBarColor">@color/primary_variant</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
 
     </style>
 
@@ -43,6 +44,14 @@
     <style name="Theme.VetrazCenter.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">500dp</item>
     </style>
 
     <style name="Theme.VetrazCenter.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

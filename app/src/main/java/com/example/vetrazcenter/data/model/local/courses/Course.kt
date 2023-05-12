@@ -22,3 +22,4 @@ data class Course(
     val programDuration: String?,
     val recruitingIsOpen: Boolean?
 ) : Serializable
+

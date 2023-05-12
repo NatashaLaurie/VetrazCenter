@@ -16,7 +16,6 @@ class CategoryViewModel @Inject constructor(
     private val useCases: CoursesUseCases
 ) : ViewModel() {
 
-
     private val _coursesResponse = MutableStateFlow<CoursesResponse>(Response.Loading)
     val coursesResponse = _coursesResponse.asStateFlow()
 

@@ -14,3 +14,4 @@ abstract class CourseDataBase : RoomDatabase() {
     abstract fun getCourseDao(): CourseDao
 
 }
+

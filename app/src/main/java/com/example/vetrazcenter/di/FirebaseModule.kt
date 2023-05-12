@@ -14,5 +14,4 @@ object FirebaseModule {
     @Provides
     fun provideFirebaseFirestoreReference() = Firebase.firestore
 
-
 }

@@ -9,3 +9,4 @@ interface ApplicationRepository {
 
     suspend fun apply(studentInfo: StudentInfo): AddApplicationResponse
 }
+

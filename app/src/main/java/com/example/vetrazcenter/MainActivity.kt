@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
-
         drawerLayout.setScrimColor(ContextCompat.getColor(this, android.R.color.transparent))
         drawerLayout.drawerElevation = 0f
 

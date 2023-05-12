@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.vetrazcenter.presentation.categories.CategoriesFragment"
-        android:label="@string/category"
+        android:label="@string/nav_categories"
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_nav_home_to_coursesListFragment"
