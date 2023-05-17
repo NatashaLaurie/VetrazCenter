@@ -84,7 +84,7 @@
     <string name="sunday">ВС</string>
     <string name="coming_soon">РАСПИСАНИЕ В РАЗРАБОТКЕ</string>
     <string name="back_button">back button</string>
-    <string name="course_saved">Курс добавлен в избранное</string>
+    <string name="course_saved">Курс добавлен в избранное. Теперь вы можете получать уведомления о последних обновлениях</string>
     <string name="course_deleted">Курс удалён</string>
     <string name="undo">вернуть</string>
     <string name="birthday_date">Дата рождения ребенка</string>
@@ -99,10 +99,41 @@
     <string name="address">Домашний адрес</string>
     <string name="recruiting_closed">набор закрыт</string>
     <string name="nav_categories">Категории</string>
-
+    <string name="notification_channel_id">default_notification_channel_id</string>
+    <string name="message_subscribed">Теперь вы можете получать уведомления о последних обновлениях</string>
+    <string name="phone_main_office">+375 17 360 03 35</string>
+    <string name="sputnik_club">КМЖ \"Спутник\"</string>
+    <string name="ecolog_club">КМЖ \"Эколог\"</string>
+    <string name="main_office">Главный офис</string>
+    <string name="main_office_address">ул.Чкалова д.1 к.4</string>
+    <string name="courses_info_title">Информация о кружках:</string>
+    <string name="director">Директор:</string>
+    <string name="phone_director">+375 17 377 53 06</string>
+    <string name="reception_title">Приемная:</string>
+    <string name="reception_main_office_phone">+375 17 375 19 64</string>
+    <string name="open_map">Открыть карты</string>
+    <string name="office_2">Корпус №2</string>
+    <string name="office2_address">ул.Ландера, 6а</string>
+    <string name="office2_phone">+375 17 352 00 23</string>
+    <string name="clubs">Клубы</string>
+    <string name="sputnic_address">ул.Левкова д.8 к.2</string>
+    <string name="sputnic_phone">+375 17 323 23 29</string>
+    <string name="ecolog_address">ул.Бакинская д.20</string>
+    <string name="ecolog_phone">+375 17 351 87 15</string>
+    <string name="main_office_coordinates">53.88062549446942, 27.538570308877663</string>
+    <string name="office_2_coordinates">53.84119660192161, 27.50171661809067</string>
+    <string name="sputnic_coordinates">53.88135336598087, 27.554066976672342</string>
+    <string name="ecolog_coordinates">53.87840389445935, 27.559976497993386</string>
     <string-array name="courses_tabs">
         <item>О курсе</item>
         <item>Расписание</item>
     </string-array>
+    <string name="title_activity_searchable">SearchableActivity</string>
+
+    <string name="rbPaid">обучение на платной основе</string>
+    <string name="rbPaidFirstYear">первый год на платной основе</string>
+    <string name="rbFree">обучение на безвозмездной основе</string>
+    <string name="empty_result">КУРСЫ НЕ НАЙДЕНЫ</string>
+
 
 </resources>

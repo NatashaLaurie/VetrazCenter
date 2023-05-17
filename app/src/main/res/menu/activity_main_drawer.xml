@@ -18,10 +18,6 @@
             android:id="@+id/nav_contacts"
             android:icon="@drawable/baseline_local_phone_24"
             android:title="@string/contacts" />
-        <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/baseline_info_24"
-            android:title="@string/about_us" />
     </group>
     <group
         android:id="@+id/labels_item"

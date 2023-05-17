@@ -3,7 +3,6 @@ package com.example.vetrazcenter.data.local
 import androidx.room.TypeConverter
 import com.example.vetrazcenter.data.model.local.courses.LocationInfo
 import com.example.vetrazcenter.data.model.local.courses.Schedule
-import com.example.vetrazcenter.data.model.local.courses.StudentsAge
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -37,13 +36,4 @@ class Converters {
         return gson.fromJson(json, LocationInfo::class.java)
     }
 
-    @TypeConverter
-    fun toStudentsAgeJson(studentsAge: StudentsAge?): String {
-        return gson.toJson(studentsAge)
-    }
-
-    @TypeConverter
-    fun fromStudentsAgeJson(json: String): StudentsAge? {
-        return gson.fromJson(json, StudentsAge::class.java)
-    }
 }

@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.components
+package com.example.vetrazcenter.presentation.components
 
 import android.content.Context
 import android.util.AttributeSet

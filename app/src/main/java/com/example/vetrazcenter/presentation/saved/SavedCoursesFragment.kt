@@ -18,6 +18,7 @@ import com.example.vetrazcenter.R
 import com.example.vetrazcenter.databinding.FragmentSavedCoursesBinding
 import com.example.vetrazcenter.presentation.courses.courses_list.CoursesAdapter
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -45,16 +46,7 @@ class SavedCoursesFragment : Fragment() {
         setupRecyclerView()
         observeCoursesList()
 
-        courseAdapter.setOnItemClickListener {
-            val bundle = Bundle().apply {
-                putSerializable("course", it)
-                putString("courseName", it.courseName)
-            }
-            findNavController().navigate(
-                R.id.action_nav_saved_to_courseFragment,
-                bundle
-            )
-        }
+        handleCourseClick()
 
         val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
@@ -72,6 +64,7 @@ class SavedCoursesFragment : Fragment() {
                 val position = viewHolder.adapterPosition
                 val course = courseAdapter.differ.currentList[position]
                 savedViewModel.deleteCourse(course)
+                unSubscribeTopic(course.id)
                 Snackbar.make(
                     view,
                     context?.getString(R.string.course_deleted).toString(),
@@ -79,6 +72,7 @@ class SavedCoursesFragment : Fragment() {
                 ).apply {
                     setAction(context.getString(R.string.undo)) {
                         savedViewModel.insertCourse(course)
+                        subscribeTopic(course.id)
                     }
                     show()
                 }
@@ -89,6 +83,19 @@ class SavedCoursesFragment : Fragment() {
             attachToRecyclerView(binding.rvCourses)
         }
 
+    }
+
+    private fun handleCourseClick() {
+        courseAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("course", it)
+                putString("courseName", it.courseName)
+            }
+            findNavController().navigate(
+                R.id.action_nav_saved_to_courseFragment,
+                bundle
+            )
+        }
     }
 
     private fun setupRecyclerView() {
@@ -109,6 +116,14 @@ class SavedCoursesFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun subscribeTopic(courseId: String) {
+        FirebaseMessaging.getInstance().subscribeToTopic(courseId)
+    }
+
+    private fun unSubscribeTopic(courseId: String) {
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(courseId)
     }
 
 

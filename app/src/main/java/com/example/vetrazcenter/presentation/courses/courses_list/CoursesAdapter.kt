@@ -59,10 +59,15 @@ class CoursesAdapter :
             tvTitle.text = course.courseName
             tvAge.text = holder.itemView.context.getString(
                 R.string.age,
-                course.studentsAge?.from.toString(),
-                course.studentsAge?.to.toString()
+                course.studentsAgeFrom?.toString(),
+                course.studentsAgeTo.toString()
             )
-            tvPaymentTerm.text = course.paymentTerm
+            tvPaymentTerm.apply {
+                text = course.paymentTerm
+                if (course.paymentTerm == context.getString(R.string.rbFree)) {
+                    setTextColor(context.getColor(R.color.accent_text_variant))
+                }
+            }
         }
         holder.binding.card.animation =
             AnimationUtils.loadAnimation(holder.itemView.context, R.anim.holder_animation)

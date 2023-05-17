@@ -59,8 +59,8 @@ class OngoingCoursesAdapter :
             tvTitle.text = course.courseName
             tvAge.text = holder.itemView.context.getString(
                 R.string.age,
-                course.studentsAge?.from.toString(),
-                course.studentsAge?.to.toString()
+                course.studentsAgeFrom?.toString(),
+                course.studentsAgeTo?.toString()
             )
         }
         holder.binding.card.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.holder_animation)

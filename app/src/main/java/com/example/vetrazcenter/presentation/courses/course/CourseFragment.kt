@@ -21,6 +21,7 @@ import com.example.vetrazcenter.domain.model.Response
 import com.example.vetrazcenter.utils.Utils.serializable
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -74,11 +75,12 @@ class CourseFragment : Fragment() {
         Glide.with(this).load(course.imageUrl).into(binding.toolbarImage)
         binding.title.text = course.courseName
         binding.btnBack.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().popBackStack()
         }
 
         binding.fabSave.setOnClickListener {
             courseViewModel.insert(course)
+            subscribeTopic(course.id)
             Snackbar.make(
                 view,
                 context?.getString(R.string.course_saved).toString(),
@@ -156,6 +158,10 @@ class CourseFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun subscribeTopic(courseId: String)  {
+        FirebaseMessaging.getInstance().subscribeToTopic(courseId)
     }
 
 }

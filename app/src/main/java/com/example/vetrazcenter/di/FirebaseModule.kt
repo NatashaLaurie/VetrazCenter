@@ -1,7 +1,6 @@
 package com.example.vetrazcenter.di
 
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,6 +11,6 @@ import dagger.hilt.components.SingletonComponent
 object FirebaseModule {
 
     @Provides
-    fun provideFirebaseFirestoreReference() = Firebase.firestore
+    fun provideFirebaseFirestoreReference() = FirebaseFirestore.getInstance()
 
 }

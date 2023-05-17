@@ -21,11 +21,15 @@ object Constants {
     const val TECHNICAL_CREATIVITY = "technical_creativity"
 
     const val RECRUITING_IS_OPEN = "recruiting_is_open"
+
+    const val STUDENTS_AGE_FROM = "student_age_from"
+    const val STUDENTS_AGE_TO = "student_age_to"
+    const val PAYMENT_TERM = "payment_term"
     const val COURSES = "courses"
-    const val NAME = "name"
 
     const val COURSE_KEY = "course"
 
     const val DATABASE_NAME = "courses_database"
+    const val CHANNEL_DEFAULT_ID = "CHANNEL_DEFAULT_ID"
 
 }

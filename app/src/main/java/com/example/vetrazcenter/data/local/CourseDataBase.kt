@@ -7,7 +7,7 @@ import com.example.vetrazcenter.data.model.local.courses.Course
 
 @Database(
     entities = [Course::class],
-    version = 2
+    version = 3
 )
 @TypeConverters(Converters::class)
 abstract class CourseDataBase : RoomDatabase() {

@@ -41,8 +41,8 @@ class CourseDescriptionFragment : Fragment() {
                 tvTeacher.text = course.teacherName
                 tvAge.text = context?.getString(
                     R.string.age,
-                    course.studentsAge?.from.toString(),
-                    course.studentsAge?.to.toString()
+                    course.studentsAgeFrom.toString(),
+                    course.studentsAgeTo.toString()
                 ) ?: ""
             }
         }

@@ -33,11 +33,6 @@
         android:name="com.example.vetrazcenter.presentation.contacts.ContactsFragment"
         android:label="@string/contacts"
         tools:layout="@layout/fragment_contacts" />
-    <fragment
-        android:id="@+id/nav_about"
-        android:name="com.example.vetrazcenter.presentation.about.AboutFragment"
-        android:label="@string/about_us"
-        tools:layout="@layout/fragment_about" />
     <activity
         android:id="@+id/label_youtube"
         app:action="android.intent.action.VIEW"

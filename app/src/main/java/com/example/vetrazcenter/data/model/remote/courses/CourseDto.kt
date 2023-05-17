@@ -41,9 +41,13 @@ data class CourseDto(
     @set:PropertyName("teacher_name")
     var teacherName: String? = null,
 
-    @get:PropertyName("students_age")
-    @set:PropertyName("students_age")
-    var studentsAgeDto: StudentsAgeDto? = null,
+    @get:PropertyName("student_age_from")
+    @set:PropertyName("student_age_from")
+    var studentsAgeFrom: Int? = null,
+
+    @get:PropertyName("student_age_to")
+    @set:PropertyName("student_age_to")
+    var studentsAgeTo: Int? = null,
 
     @get:PropertyName("groups_schedule")
     @set:PropertyName("groups_schedule")
@@ -72,7 +76,8 @@ data class CourseDto(
             imageUrl = imageUrl,
             paymentTerm = paymentTerm,
             teacherName = teacherName,
-            studentsAge = studentsAgeDto?.toDomainObject(),
+            studentsAgeFrom = studentsAgeFrom,
+            studentsAgeTo = studentsAgeTo,
             schedule = scheduleToScheduleDto(scheduleDto),
             program = program,
             programDuration = programDuration,

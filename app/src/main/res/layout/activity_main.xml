@@ -16,7 +16,7 @@
         android:layout_height="match_parent" />
 
 
-    <com.example.vetrazcenter.components.MaterialNavigationView
+    <com.example.vetrazcenter.presentation.components.MaterialNavigationView
         android:id="@+id/nav_view"
         android:layout_width="260dp"
         android:layout_height="match_parent"
