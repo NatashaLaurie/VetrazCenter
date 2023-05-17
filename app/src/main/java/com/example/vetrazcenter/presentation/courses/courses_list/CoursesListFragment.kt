@@ -1,10 +1,9 @@
 package com.example.vetrazcenter.presentation.courses.courses_list
 
 import android.os.Bundle
-import android.view.*
-import androidx.appcompat.widget.SearchView
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -31,8 +30,6 @@ class CoursesListFragment : Fragment() {
     private lateinit var courseAdapter: CoursesAdapter
     private val args: CoursesListFragmentArgs by navArgs()
 
-    private val menuHost: MenuHost get() = requireActivity()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,50 +45,6 @@ class CoursesListFragment : Fragment() {
         if (args.categoryId.isNullOrEmpty()) {
             coursesViewModel.getOngoingCourses()
         }
-
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onPrepareMenu(menu: Menu) {
-
-            }
-
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.search_menu, menu)
-                val search = menu.findItem(R.id.action_search)
-                val searchView = search.actionView as SearchView
-                searchView.isSubmitButtonEnabled = true
-                searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                    override fun onQueryTextSubmit(query: String?): Boolean {
-                        if (query != null) {
-                            TODO()
-                        }
-                        return true
-                    }
-
-                    override fun onQueryTextChange(query: String?): Boolean {
-                        if (query != null) {
-                            TODO()
-
-                        }
-                        return true
-                    }
-                })
-            }
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when (menuItem.itemId) {
-                    R.id.action_search -> {
-                        true
-                    }
-                    else -> false
-                }
-            }
-
-            override fun onMenuClosed(menu: Menu) {
-
-            }
-
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-
 
         return root
     }
