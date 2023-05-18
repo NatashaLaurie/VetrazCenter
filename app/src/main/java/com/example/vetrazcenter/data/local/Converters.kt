@@ -1,8 +1,8 @@
 package com.example.vetrazcenter.data.local
 
 import androidx.room.TypeConverter
-import com.example.vetrazcenter.data.model.local.courses.LocationInfo
-import com.example.vetrazcenter.data.model.local.courses.Schedule
+import com.example.vetrazcenter.data.local.model.LocationInfo
+import com.example.vetrazcenter.data.local.model.Schedule
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

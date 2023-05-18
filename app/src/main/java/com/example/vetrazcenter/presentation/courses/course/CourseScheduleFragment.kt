@@ -12,7 +12,7 @@ import com.example.vetrazcenter.R
 import com.example.vetrazcenter.utils.Constants
 import com.example.vetrazcenter.utils.Utils.serializable
 import com.example.vetrazcenter.databinding.FragmentCourseScheduleBinding
-import com.example.vetrazcenter.data.model.local.courses.Course
+import com.example.vetrazcenter.data.local.model.Course
 
 
 class CourseScheduleFragment : Fragment() {

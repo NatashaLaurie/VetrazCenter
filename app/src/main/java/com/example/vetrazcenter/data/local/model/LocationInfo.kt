@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.data.model.local.courses
+package com.example.vetrazcenter.data.local.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

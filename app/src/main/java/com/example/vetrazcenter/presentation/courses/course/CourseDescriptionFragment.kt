@@ -11,7 +11,7 @@ import com.example.vetrazcenter.R
 import com.example.vetrazcenter.utils.Constants.COURSE_KEY
 import com.example.vetrazcenter.utils.Utils.serializable
 import com.example.vetrazcenter.databinding.FragmentCourseDescriptionBinding
-import com.example.vetrazcenter.data.model.local.courses.Course
+import com.example.vetrazcenter.data.local.model.Course
 
 
 class CourseDescriptionFragment : Fragment() {

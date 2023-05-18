@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.vetrazcenter.R
 import com.example.vetrazcenter.databinding.CourseItemBinding
-import com.example.vetrazcenter.data.model.local.courses.Course
+import com.example.vetrazcenter.data.local.model.Course
 
 class CoursesAdapter :
     RecyclerView.Adapter<CoursesAdapter.CourseViewHolder>() {

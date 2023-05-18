@@ -1,13 +1,13 @@
 package com.example.vetrazcenter.data.repository
 
 import android.util.Log
-import com.example.vetrazcenter.data.model.remote.courses.CourseDto
+import com.example.vetrazcenter.data.remote.model.CourseDto
 import com.example.vetrazcenter.domain.model.Response.Failure
 import com.example.vetrazcenter.domain.model.Response.Success
 import com.example.vetrazcenter.domain.repository.CoursesRepository
 import com.example.vetrazcenter.utils.Constants.CATEGORIES
 import com.example.vetrazcenter.utils.Constants.COURSES
-import com.example.vetrazcenter.utils.Constants.NAME
+import com.example.vetrazcenter.utils.Constants.COURSE_NAME
 import com.example.vetrazcenter.utils.Constants.RECRUITING_IS_OPEN
 import com.example.vetrazcenter.utils.Constants.TAG
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,7 +25,7 @@ class CoursesRepositoryImpl @Inject constructor(
     private val collectionGroup = firebaseFirestore.collectionGroup(COURSES)
     override fun getCoursesListByCategory(category: String) = callbackFlow {
         val snapshotListener = firebaseFirestore.collection(CATEGORIES)
-            .document(category).collection(COURSES).orderBy(NAME)
+            .document(category).collection(COURSES).orderBy(COURSE_NAME)
             .addSnapshotListener { snapshot, e ->
                 val coursesResponse = if (snapshot != null) {
                     val course = snapshot.toObjects(CourseDto::class.java)

@@ -14,8 +14,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.data.model.local.courses.Course
-import com.example.vetrazcenter.data.model.student.StudentInfo
+import com.example.vetrazcenter.data.local.model.Course
+import com.example.vetrazcenter.data.remote.model.student.StudentInfo
 import com.example.vetrazcenter.databinding.FragmentCourseBinding
 import com.example.vetrazcenter.domain.model.Response
 import com.example.vetrazcenter.utils.Utils.serializable
@@ -38,7 +38,7 @@ class CourseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         course = args.course
-        setFragmentResultListener("request_key") { key, bundle ->
+        setFragmentResultListener("request_key") { _, bundle ->
             val studentInfo = bundle.serializable<StudentInfo>("extra_key")
             studentInfo?.courseName = course.courseName
             if (studentInfo != null) {

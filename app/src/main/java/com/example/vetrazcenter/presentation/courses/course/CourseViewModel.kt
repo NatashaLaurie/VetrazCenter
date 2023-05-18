@@ -2,8 +2,8 @@ package com.example.vetrazcenter.presentation.courses.course
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.vetrazcenter.data.model.local.courses.Course
-import com.example.vetrazcenter.data.model.student.StudentInfo
+import com.example.vetrazcenter.data.local.model.Course
+import com.example.vetrazcenter.data.remote.model.student.StudentInfo
 import com.example.vetrazcenter.data.repository.SavedCoursesRepositoryImpl
 import com.example.vetrazcenter.domain.model.Response.Loading
 import com.example.vetrazcenter.domain.repository.AddApplicationResponse

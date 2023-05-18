@@ -1,7 +1,7 @@
 package com.example.vetrazcenter.data.repository
 
 import com.example.vetrazcenter.data.local.CourseDao
-import com.example.vetrazcenter.data.model.local.courses.Course
+import com.example.vetrazcenter.data.local.model.Course
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

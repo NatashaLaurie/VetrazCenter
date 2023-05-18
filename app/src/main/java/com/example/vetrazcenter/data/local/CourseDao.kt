@@ -1,7 +1,7 @@
 package com.example.vetrazcenter.data.local
 
 import androidx.room.*
-import com.example.vetrazcenter.data.model.local.courses.Course
+import com.example.vetrazcenter.data.local.model.Course
 import kotlinx.coroutines.flow.Flow
 
 

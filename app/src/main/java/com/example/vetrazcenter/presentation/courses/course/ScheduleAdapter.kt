@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vetrazcenter.R
-import com.example.vetrazcenter.data.model.local.courses.Schedule
+import com.example.vetrazcenter.data.local.model.Schedule
 import com.example.vetrazcenter.databinding.ScheduleItemBinding
 
 class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {

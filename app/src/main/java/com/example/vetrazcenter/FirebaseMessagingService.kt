@@ -42,7 +42,6 @@ class FirebaseMessagingService : FirebaseMessagingService() {
         Log.d(TAG, "Refreshed token: $token")
 
     }
-    // [END on_new_token]
 
 
     @SuppressLint("UnspecifiedImmutableFlag")

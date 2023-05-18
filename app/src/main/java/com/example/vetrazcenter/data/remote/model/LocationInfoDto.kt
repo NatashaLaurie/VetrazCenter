@@ -1,6 +1,6 @@
-package com.example.vetrazcenter.data.model.remote.courses
+package com.example.vetrazcenter.data.remote.model
 
-import com.example.vetrazcenter.data.model.local.courses.LocationInfo
+import com.example.vetrazcenter.data.local.model.LocationInfo
 import com.google.firebase.firestore.PropertyName
 
 data class LocationInfoDto(

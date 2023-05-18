@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
-import com.example.vetrazcenter.data.model.student.StudentInfo
+import com.example.vetrazcenter.data.remote.model.student.StudentInfo
 import com.example.vetrazcenter.databinding.FragmentApplyDialogBinding
 import com.google.android.material.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior

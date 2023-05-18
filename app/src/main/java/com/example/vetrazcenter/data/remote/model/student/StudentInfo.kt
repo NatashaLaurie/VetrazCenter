@@ -1,4 +1,4 @@
-package com.example.vetrazcenter.data.model.student
+package com.example.vetrazcenter.data.remote.model.student
 
 import java.io.Serializable
 

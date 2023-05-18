@@ -1,6 +1,6 @@
 package com.example.vetrazcenter.data.repository
 
-import com.example.vetrazcenter.data.model.student.StudentInfo
+import com.example.vetrazcenter.data.remote.model.student.StudentInfo
 import com.example.vetrazcenter.domain.model.Response
 import com.example.vetrazcenter.domain.repository.AddApplicationResponse
 import com.example.vetrazcenter.domain.repository.ApplicationRepository

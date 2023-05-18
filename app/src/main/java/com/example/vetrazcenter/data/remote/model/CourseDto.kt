@@ -1,7 +1,7 @@
-package com.example.vetrazcenter.data.model.remote.courses
+package com.example.vetrazcenter.data.remote.model
 
-import com.example.vetrazcenter.data.model.local.courses.Course
-import com.example.vetrazcenter.data.model.local.courses.Schedule
+import com.example.vetrazcenter.data.local.model.Course
+import com.example.vetrazcenter.data.local.model.Schedule
 import com.google.firebase.firestore.PropertyName
 
 data class CourseDto(
